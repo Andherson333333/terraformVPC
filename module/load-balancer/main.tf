@@ -25,3 +25,18 @@ resource "aws_lb_target_group" "target_group" {
 
   tags = var.tags
 }
+
+resource "aws_lb_listener" "listener" {
+  load_balancer_arn = aws_lb.load-balancer.arn
+  port              = var.listener_port
+  protocol          = var.listener_protocol
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.target_group.arn
+  }
+}
+
+
+
+
