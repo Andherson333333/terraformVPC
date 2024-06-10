@@ -35,7 +35,8 @@ module "load_balancer" {
   lb_type                          = var.lb_type
   securityGroupLB_id               = module.security_group_lb.securityGroupLB_id
   lb_subnets                       = module.public_subnets.public_subnet_ids_list
-  vpc_id                           = module.vpc.vpc_id  # Agregar esta línea
+  vpc_id                           = module.vpc.vpc_id
+# Targe gropup
   target_group_name                = var.target_group_name
   target_group_port                = var.target_group_port
   target_group_protocol            = var.target_group_protocol
@@ -47,4 +48,7 @@ module "load_balancer" {
   health_check_healthy_threshold   = var.health_check_healthy_threshold
   health_check_unhealthy_threshold = var.health_check_unhealthy_threshold
   tags                             = var.tags
+#Listener
+  listener_port                    = var.listener_port
+  listener_protocol                = var.listener_protocol
 }
