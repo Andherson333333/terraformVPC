@@ -50,3 +50,9 @@ tags = {
   Name = "EC2 target group"
 }
 
+# Listener
+
+listener_port     = 80
+listener_protocol = "HTTP"
+
+
