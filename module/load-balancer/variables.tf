@@ -88,3 +88,18 @@ variable "tags" {
   description = "Etiquetas que se aplicarán al grupo de destino"
   type        = map(string)
 }
+
+## Listener
+
+variable "listener_port" {
+  description = "Puerto del listener"
+  type        = number
+}
+
+variable "listener_protocol" {
+  description = "Protocolo del listener"
+  type        = string
+}
+
+
+
